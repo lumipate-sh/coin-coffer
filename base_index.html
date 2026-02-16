@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="app.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Coin Pouch | Dashboard</title>
+</head>
+<body>
+    <aside class="sidebar">
+        <p class="logo">Coin <span class="title-accent">Pouch</span></p>
+        <menu class="menu">
+            <ul class="service-list">
+                <div class="containers-services first">
+                    <div class="list-icons"></div>
+                    <li class="menu-items">Dashboard</li>
+                </div>
+                <div class="containers-services">
+                    <div class="list-icons"></div>
+                    <li class="menu-items">Reports</li>
+                </div>
+                <div class="containers-services">
+                    <div class="list-icons"></div>
+                    <li class="menu-items">Transactions</li>
+                </div>
+                <div class="containers-services">
+                    <div class="list-icons"></div>
+                    <li class="menu-items">Budgets</li>
+                </div>
+            </ul>
+        </menu>
+    </aside>
+
+    <header class="header">
+        <div class="container-title">
+            <h2 class="title">Overview</h2>
+            <p class="subtitle">Welcome back!</p>
+        </div>
+        <div class="header-actions">
+            <div class="current-date-range">Jan 1- Jan 31, 2026</div>
+            <button class="export-button">Export</button>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="cards">
+            <div class="cards-container">
+                <div class="card">
+                    <div class="title-card">Total Balance</div>
+                    <div class="euro-value">$ 50.865,00</div>
+                    <div class="information">+ 2.4% vs pevious month</div>
+                </div>
+                <div class="card">
+                    <div class="title-card">Total Income</div>
+                    <div class="euro-value">$ 44.678,59</div>
+                    <div class="information">+ 12 new sources</div>
+                </div>
+                <div class="card">
+                    <div class="title-card">Total Spending</div>
+                    <div class="valor expense-color">$ 6.186,41</div>
+                    <div class="information expense-color">- 5% vs previous month</div>
+                </div>
+            </div>
+        </section>
+        <section class="transactions">
+            <div class="new-transaction">
+                <div class="title-new-transaction-container">
+                    <p class="title-new-transaction">New Transaction</p>
+                    <div class="new-transaction-icon">+</div>                   
+                </div>
+                <div class="form-container">
+                    <div class="description-form">
+                        <form action="" class="incomes"></form>
+                        <label for="description">Description</label>
+                        <input type="text" id="description" placeholder="salary, groceries, ...">
+                    </div>
+                    <div class="qtd-transaction-type-container">
+                        <div class="qtd-container">
+                            <label for="quantity">Value</label>
+                            <input type="number" id="quantity" placeholder="100, 9.99, ...">
+                        </div>
+                        <div class="transaction-type-container">
+                            <label for="transaction-type">Type</label>
+                            <select name="transaction-type" id="tipo-transacao">
+                                <option value="income">Income</option>
+                                <option value="spending">Spending</option>
+                            </select>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="category-container">
+                    <div class="transaction-categories">Food</div>
+                    <div class="transaction-categories">Bills</div>
+                    <div class="transaction-categories">Salary</div>
+                </div>
+                <div class="category-container">
+                    <div class="transaction-categories">Entertainment</div>
+                    <div class="transaction-categories">Leisure</div>
+                    <div class="transaction-categories">Outher</div>
+                </div>
+                <button class="add-to-history">
+                    <div class="btn-container">
+                        <div class="btn-icon">+</div>
+                        <p class="btn-text">Add to history</p>
+                    </div>
+                </button>
+            </div>
+            <article class="transaction-history">
+                <h3 class="sub-title-transaction-history">Recent History</h3>                    
+                <div class="table-container">
+                    <div class="table-head">
+                        <span>Transaction</span>
+                        <span>CATEGORY</span>
+                        <span>DATE</span>
+                        <span>VALUE</span>
+                    </div>
+
+                    <div class="transaction-list"></div>
+
+                    <div class="table-footer">
+                        <a href="#" class="transaction-history-link">SEE ALL &rarr;</a>
+                    </div>
+
+                </div>
+            </article>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>2026 | <strong>lumipate</strong></p>
+    </footer>
+</body>
+</html>

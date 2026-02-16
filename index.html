@@ -1,134 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script type="module" src="app.js"></script>
-    <link rel="stylesheet" href="style.css">
-    <title>Coin Pouch | Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>lab</title>
+    <link rel="icon" type="image/icon" href="./favicon.ico">
+    <!-- quick fix for false error in console -->
+    <link rel="shortcut icon" href="#">
+    <link href="./minimalStyle.css" rel="stylesheet">
+    <!-- <link href="./style.css" rel="stylesheet"> -->
+    <!-- <script type="module" src="./app.js"></script> -->
+    <script type="module" src="./app.js" defer></script>
 </head>
+
 <body>
-    <aside class="sidebar">
-        <p class="logo">Coin <span class="title-accent">Pouch</span></p>
-        <menu class="menu">
-            <ul class="service-list">
-                <div class="containers-services first">
-                    <div class="list-icons"></div>
-                    <li class="menu-items">Dashboard</li>
-                </div>
-                <div class="containers-services">
-                    <div class="list-icons"></div>
-                    <li class="menu-items">Reports</li>
-                </div>
-                <div class="containers-services">
-                    <div class="list-icons"></div>
-                    <li class="menu-items">Transactions</li>
-                </div>
-                <div class="containers-services">
-                    <div class="list-icons"></div>
-                    <li class="menu-items">Budgets</li>
-                </div>
-            </ul>
-        </menu>
-    </aside>
 
-    <header class="header">
-        <div class="container-title">
-            <h2 class="title">Overview</h2>
-            <p class="subtitle">Welcome back!</p>
+    <div class="container">
+        <div class="header">
+            <h1>Coin Coffer</h1>
+
+            <nav>
+                <button id="btn-show-dashboard">Dashboard</button>
+                <button id="btn-show-history">Transaction History</button>
+            </nav>
         </div>
-        <div class="header-actions">
-            <div class="current-date-range">Jan 1- Jan 31, 2026</div>
-            <button class="export-button">Export</button>
+
+
+        <h2 id="welcome-user">Welcome back</h2>
+
+        <section id="new-transaction-area">
+        <button id="btn-add-expense">Add Expense</button>
+        <button id="btn-add-income">Add Income</button>
+
+        <div id="transaction-modal" class="modal">
+            <div class="modal-content">
+                <span class="modal-close">&times;</span>
+                <h2 id="modal-title">Add Transaction</h2>
+                <form id="new-trans-form">
+                    <input type="hidden" name="type" id="trans-type" value="" />
+                    
+                    <fieldset>
+                        <legend>what</legend>
+                        <input type="text" name="description" id="new-trans-description" placeholder="description" required />
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>how much</legend>
+                        <input type="number" name="currencyValue" id="new-trans-value" placeholder="19.99" required />
+                    </fieldset>
+
+                    <fieldset>
+                        <legend>when</legend>
+                        <input type="date" name="date" id="new-trans-date" />
+                        <p>if today, leave empty</p>
+                    </fieldset>
+
+                    <fieldset id="category-fieldset">
+                        <legend>category</legend>
+                    </fieldset>
+
+                    <button type="submit" id="new-trans-submit">Add Transaction</button>
+                    <button type="button" id="btn-cancel">Cancel</button>
+                </form>
+            </div>
         </div>
-    </header>
+    </section>
 
-    <main class="main">
-        <section class="cards">
-            <div class="cards-container">
-                <div class="card">
-                    <div class="title-card">Total Balance</div>
-                    <div class="euro-value">$ 50.865,00</div>
-                    <div class="information">+ 2.4% vs pevious month</div>
-                </div>
-                <div class="card">
-                    <div class="title-card">Total Income</div>
-                    <div class="euro-value">$ 44.678,59</div>
-                    <div class="information">+ 12 new sources</div>
-                </div>
-                <div class="card">
-                    <div class="title-card">Total Spending</div>
-                    <div class="valor expense-color">$ 6.186,41</div>
-                    <div class="information expense-color">- 5% vs previous month</div>
-                </div>
-            </div>
-        </section>
-        <section class="transactions">
-            <div class="new-transaction">
-                <div class="title-new-transaction-container">
-                    <p class="title-new-transaction">New Transaction</p>
-                    <div class="new-transaction-icon">+</div>                   
-                </div>
-                <div class="form-container">
-                    <div class="description-form">
-                        <form action="" class="incomes"></form>
-                        <label for="description">Description</label>
-                        <input type="text" id="description" placeholder="salary, groceries, ...">
-                    </div>
-                    <div class="qtd-transaction-type-container">
-                        <div class="qtd-container">
-                            <label for="quantity">Value</label>
-                            <input type="number" id="quantity" placeholder="100, 9.99, ...">
-                        </div>
-                        <div class="transaction-type-container">
-                            <label for="transaction-type">Type</label>
-                            <select name="transaction-type" id="tipo-transacao">
-                                <option value="income">Income</option>
-                                <option value="spending">Spending</option>
-                            </select>
+    <section id="dashboard-section">
+        <h2>DASHBOARD</h2>
 
-                        </div>
-                    </div>
-                </div>
-                <div class="category-container">
-                    <div class="transaction-categories">Food</div>
-                    <div class="transaction-categories">Bills</div>
-                    <div class="transaction-categories">Salary</div>
-                </div>
-                <div class="category-container">
-                    <div class="transaction-categories">Entertainment</div>
-                    <div class="transaction-categories">Leisure</div>
-                    <div class="transaction-categories">Outher</div>
-                </div>
-                <button class="add-to-history">
-                    <div class="btn-container">
-                        <div class="btn-icon">+</div>
-                        <p class="btn-text">Add to history</p>
-                    </div>
-                </button>
-            </div>
-            <article class="transaction-history">
-                <h3 class="sub-title-transaction-history">Recent History</h3>                    
-                <div class="table-container">
-                    <div class="table-head">
-                        <span>Transaction</span>
-                        <span>CATEGORY</span>
-                        <span>DATE</span>
-                        <span>VALUE</span>
-                    </div>
+        <div id="current-balance-box">
+            <h3>CURRENT BALANCE</h3>
+            <output> <span id="current-balance"></span>€</output>
+        </div>
 
-                    <div class="transaction-list"></div>
+        <div id="month-expenses-box">
+            <h3>EXPENSES THIS MONTH</h3>
+            <output><span id="month-expenses">1000</span>€</output>
+            <!-- <output>-><span id="relative-diff-month-expenses">+5</span>% vs last month</output> -->
+        </div>
 
-                    <div class="table-footer">
-                        <a href="#" class="transaction-history-link">SEE ALL &rarr;</a>
-                    </div>
+        <div id="current-balance-box">
+            <h3>INCOME THIS MONTH</h3>
+            <output> <span id="month-income">2000</span>€</output>
+            <!-- <output>-> <span id="relative-diff-month-income">+5</span>% vs last month</output> -->
+        </div>
 
-                </div>
-            </article>
-        </section>
-    </main>
-    <footer class="footer">
-        <p>2026 | <strong>lumipate</strong></p>
-    </footer>
+        <h3>LATEST TRANSACTIONS</h3>
+        <ul id="latest-transactions-dashboard">
+        </ul>
+    </section>
+
+    <section id="transaction-history" style="display: none;">
+        <h2>Transaction History</h2>
+        <button id="btn-filter">Filter List</button>
+        
+        <div id="filter-dropdown" style="display: none;">
+            <label>
+                Type:
+                <select id="filter-type">
+                    <option value="all">All</option>
+                    <option value="expense">Expense</option>
+                    <option value="income">Income</option>
+                </select>
+            </label>
+            <label>
+                Category:
+                <select id="filter-category">
+                    <option value="all">All</option>
+                </select>
+            </label>
+            <label>
+                From:
+                <input type="date" id="filter-date-from" />
+            </label>
+            <label>
+                Until:
+                <input type="date" id="filter-date-until" />
+            </label>
+            <button id="btn-apply-filters">Apply Filters</button>
+            <button id="btn-clear-filters">Clear Filters</button>
+        </div>
+
+        <ul id="transaction-history-list"></ul>
+        <button id="btn-load-more" style="display: none;">Load More</button>
+    </section>
+
+    <button id="delete-all-data">🚨 DELETE ALL DATA 🚨</button>
+    </div>
 </body>
+
 </html>
