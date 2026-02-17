@@ -9,16 +9,16 @@ As of now, the project has no active functionity. It is in its early stages of p
 
 ## why make this?
 
-Coin Pouch is a project created mostly to practice javascript development, in particular in its integrations with frontend in plain HTML/CSS and management of memory with the browser's local and session storage.
+Coin Coffer is a project created mostly to practice javascript development, in particular in its integrations with frontend in plain HTML/CSS and management of memory with the browser's local and session storage.
 It is a project of the Upskill course and should be seen, first and foremost, as a traning exercise, rather than an app for day to day use.
 
 ## core features
 
-- [ ] user dashboard with important information at a glance
-- [ ] add income & spending
+- [x] user dashboard with important information at a glance
+- [x] add income & spending
 - - [x] transaction must have title, description, type, category, value & date
-- [ ] transaction history with filtered views
-- [ ] remove transactions from history
+- [x] transaction history with filtered views
+- [x] remove transactions from history
 - [ ] automatic & instant feedback on new data
 - [ ] overall financial information
 - - [ ] total income, spending, difference...
@@ -42,3 +42,8 @@ i intend to personalize it to my own preference, however that will only happen a
 ## credits
 
 the challenge to make this app was given in the context of the Upskill course, which providade programing classes and materials that proved
+
+### AI usage disclosure
+
+some aspects of the development of this app were made with the use of generative artificial intelligente, namely in the generation of dummy data to test the app, the implementation of some functions and debugging and refactoring sections of code.
+artificial inteligence, however, had no role in the design decicions of the app regarding features, functionality, features and overall development. 
