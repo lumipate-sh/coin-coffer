@@ -52,6 +52,12 @@ body {
     margin-bottom: 1.2em;
 }
 
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 0.6em;
+}
+
 h1, h2, h3 {
     font-family: 'Press Start 2P', cursive;
 }
@@ -91,6 +97,29 @@ nav button {
     border-radius: 0.3em;
     cursor: pointer;
     font-size: 0.7em;
+    transition: all 0.2s ease;
+}
+
+nav button:hover {
+    background-color: var(--box);
+    border-color: var(--interact);
+}
+
+#btn-demo-mode {
+    background-color: var(--pop);
+    color: var(--bg);
+    border: none;
+    padding: 0.5em 1em;
+    border-radius: 0.3em;
+    cursor: pointer;
+    font-size: 0.7em;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+#btn-demo-mode:hover {
+    background-color: #b3667a;
+
     transition: all 0.2s ease;
 }
 

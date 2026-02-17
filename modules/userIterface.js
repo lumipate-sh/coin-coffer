@@ -31,6 +31,7 @@ const FILTER_DATE_FROM = document.getElementById('filter-date-from')
 const FILTER_DATE_UNTIL = document.getElementById('filter-date-until')
 const BTN_APPLY_FILTERS = document.getElementById('btn-apply-filters')
 const BTN_CLEAR_FILTERS = document.getElementById('btn-clear-filters')
+const BTN_DEMO_MODE = document.getElementById('btn-demo-mode')
 
 let currentHistoryPage = 0
 const transactionsPerPage = 30
@@ -64,6 +65,8 @@ export function eventsUI(handlers) {
     BTN_FILTER.addEventListener('click', toggleFilterDropdown)
     BTN_APPLY_FILTERS.addEventListener('click', () => handlers?.onApplyFilters?.())
     BTN_CLEAR_FILTERS.addEventListener('click', () => handlers?.onClearFilters?.())
+    
+    BTN_DEMO_MODE.addEventListener('click', () => handlers?.onDemoMode?.())
 }
 
 

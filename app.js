@@ -13,6 +13,8 @@ import {
     calcBalance,
 } from "./modules/transactions.js"
 
+import { storeDummyData } from "./dummyData.js"
+
 import {
     eventsUI,
     informationPopup,
@@ -35,10 +37,6 @@ import {
     applyFiltersToList,
     clearFilters,
 } from "./modules/userIterface.js"
-
-//DUMMY DATA
-import * as test from "./dummyData.js"
-test.storeDummyData()
 
 // CONSTANTS
 
@@ -206,6 +204,14 @@ function handleClearFilters() {
     showTransactionHistory(TRANSACTION_LIST, false, handleDeleteTransaction);
 }
 
+function handleDemoMode() {
+    const confirmed = confirmAlert('This will load 50 example transactions so you can experiment with the app features. Continue?');
+    if (!confirmed) return;
+    
+    storeDummyData();
+    loadApp();
+}
+
 
 // SETUP OF WHAT HAPPENS ON EACH EVENT
 
@@ -217,6 +223,7 @@ eventsUI({
     onLoadMore: handleLoadMore,
     onApplyFilters: handleApplyFilters,
     onClearFilters: handleClearFilters,
+    onDemoMode: handleDemoMode,
 })
 
 
