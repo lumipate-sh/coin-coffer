@@ -128,6 +128,17 @@ export function listLatestTransactions(transactions, qty = 10, onDelete = null) 
     const sorted = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
     const limited = sorted.slice(0, qty);
 
+    const headerRow = document.createElement('li');
+    headerRow.className = 'transaction-header';
+    headerRow.innerHTML = `
+        <span class="col-date">Date</span>
+        <span class="col-amount">Amount</span>
+        <span class="col-desc">Description</span>
+        <span class="col-category">Category</span>
+        <span class="col-actions"></span>
+    `;
+    LATEST_TRANSACTIONS_DASHBOARD.appendChild(headerRow);
+
     for (const trans of limited) {
         const date = new Date(trans.date);
         const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
@@ -135,17 +146,21 @@ export function listLatestTransactions(transactions, qty = 10, onDelete = null) 
         const category = trans.category;
         const type = trans.type;
         const value = type === 'income' ? `+${trans.value}` : `-${trans.value}`;
+        const amountClass = type === 'income' ? 'amount-income' : 'amount-expense';
 
         const li = document.createElement('li');
-        
-        const textSpan = document.createElement('span');
-        textSpan.textContent = `${formattedDate} | ${description} | ${value}€ | ${type} | ${category}`;
+        li.className = 'transaction-row';
+        li.innerHTML = `
+            <span class="col-date">${formattedDate}</span>
+            <span class="col-amount ${amountClass}">${value}€</span>
+            <span class="col-desc">${description}</span>
+            <span class="col-category">${category}</span>
+        `;
         
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = '🗑';
         deleteBtn.title = 'Delete transaction';
-        deleteBtn.style.marginLeft = '10px';
-        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.className = 'col-actions';
         
         if (onDelete) {
             deleteBtn.addEventListener('click', () => onDelete(trans.id));
@@ -153,7 +168,6 @@ export function listLatestTransactions(transactions, qty = 10, onDelete = null) 
             deleteBtn.style.display = 'none';
         }
 
-        li.appendChild(textSpan);
         li.appendChild(deleteBtn);
         LATEST_TRANSACTIONS_DASHBOARD.appendChild(li);
     }
@@ -253,6 +267,17 @@ export function showTransactionHistory(transactions, append = false, onDelete = 
     if (!append) {
         TRANSACTION_HISTORY_LIST.innerHTML = '';
         currentHistoryPage = 0;
+
+        const headerRow = document.createElement('li');
+        headerRow.className = 'transaction-header';
+        headerRow.innerHTML = `
+            <span class="col-date">Date</span>
+            <span class="col-amount">Amount</span>
+            <span class="col-desc">Description</span>
+            <span class="col-category">Category</span>
+            <span class="col-actions"></span>
+        `;
+        TRANSACTION_HISTORY_LIST.appendChild(headerRow);
     }
 
     const sorted = [...transactions].sort((a, b) => new Date(b.date) - new Date(a.date));
@@ -267,23 +292,26 @@ export function showTransactionHistory(transactions, append = false, onDelete = 
         const category = trans.category;
         const type = trans.type;
         const value = type === 'income' ? `+${trans.value}` : `-${trans.value}`;
+        const amountClass = type === 'income' ? 'amount-income' : 'amount-expense';
 
         const li = document.createElement('li');
-        
-        const textSpan = document.createElement('span');
-        textSpan.textContent = `${formattedDate} | ${description} | ${value}€ | ${type} | ${category}`;
+        li.className = 'transaction-row';
+        li.innerHTML = `
+            <span class="col-date">${formattedDate}</span>
+            <span class="col-amount ${amountClass}">${value}€</span>
+            <span class="col-desc">${description}</span>
+            <span class="col-category">${category}</span>
+        `;
         
         const deleteBtn = document.createElement('button');
         deleteBtn.textContent = '🗑';
         deleteBtn.title = 'Delete transaction';
-        deleteBtn.style.marginLeft = '10px';
-        deleteBtn.style.cursor = 'pointer';
+        deleteBtn.className = 'col-actions';
         
         if (onDelete) {
             deleteBtn.addEventListener('click', () => onDelete(trans.id));
         }
 
-        li.appendChild(textSpan);
         li.appendChild(deleteBtn);
         TRANSACTION_HISTORY_LIST.appendChild(li);
     }
