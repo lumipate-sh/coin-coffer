@@ -4,13 +4,12 @@ A simple personal finance and transaction record app
 
 ## status
 
-**PROJECT IN EARLY DEVELOPMENT**
-As of now, the project has no active functionity. It is in its early stages of planning and ideation.
+The app is functional in its basic features.
 
 ## why make this?
 
 Coin Coffer is a project created mostly to practice javascript development, in particular in its integrations with frontend in plain HTML/CSS and management of memory with the browser's local and session storage.
-It is a project of the Upskill course and should be seen, first and foremost, as a traning exercise, rather than an app for day to day use.
+It is a project of the Upskill course and should be seen, first and foremost, as a training exercise, rather than an app for day to day use.
 
 ## core features
 
@@ -46,4 +45,4 @@ the challenge to make this app was given in the context of the Upskill course, w
 ### AI usage disclosure
 
 some aspects of the development of this app were made with the use of generative artificial intelligente, namely in the generation of dummy data to test the app, the implementation of some functions and debugging and refactoring sections of code.
-artificial inteligence, however, had no role in the design decicions of the app regarding features, functionality, features and overall development. 
+artificial inteligence, however, had no role in the design decicions of the app regarding features, functionality, features and overall development.
