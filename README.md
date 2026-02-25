@@ -4,7 +4,7 @@ A simple personal finance and transaction record app
 
 ## status
 
-The app is functional in its basic features.
+The app is functional in its basic features. It's development continues on the 
 
 ## why make this?
 
@@ -18,10 +18,9 @@ It is a project of the Upskill course and should be seen, first and foremost, as
 - - [x] transaction must have title, description, type, category, value & date
 - [x] transaction history with filtered views
 - [x] remove transactions from history
-- [ ] automatic & instant feedback on new data
 - [ ] overall financial information
 - - [ ] total income, spending, difference...
-- - [ ] filter by date, type...
+- - [x] filter by date, type...
 - [x] semi-persistant memory using browser local storage
 
 ## concepts to practice
@@ -40,7 +39,17 @@ i intend to personalize it to my own preference, however that will only happen a
 
 ## credits
 
-the challenge to make this app was given in the context of the Upskill course, which providade programing classes and materials that proved
+the challenge to make this app was given in the context of the Upskill course, which providade classes, guidance and material.
+
+### color theme
+
+- [Gruvbox](https://github.com/morhetz/gruvbox)
+
+### fonts
+
+- [Press Start 2P](https://zone38.net/font/#pressstart) by [Cody "CodeMan38" Boisclair](https://zone38.net/), licensed under [SIL Open Font License](https://openfontlicense.org/)   
+- [Overpass](https://overpassfont.org/) by [Delve Fonts](https://delvefonts.com/), licensed under [SIL Open Font License](https://openfontlicense.org/)
+
 
 ### AI usage disclosure
 
