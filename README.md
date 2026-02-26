@@ -4,7 +4,7 @@ A simple personal finance and transaction record app
 
 ## status
 
-The app is functional in its basic features. It's development continues on the 
+The app is functional in its basic features. It's development continues on the [Copper Coin Coffer](https://github.com/lumipate-sh/copper-coin-coffer), an updated version of this app in typescript
 
 ## why make this?
 
